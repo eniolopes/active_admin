@@ -14,7 +14,7 @@ module ActiveAdmin
         format.csv do
           headers['Content-Type'] = 'text/csv; charset=utf-8'
           headers['Content-Disposition'] = %{attachment; filename="#{csv_filename}"}
-          render active_admin_template('index')
+          render streaming: true
         end
       end
     end
